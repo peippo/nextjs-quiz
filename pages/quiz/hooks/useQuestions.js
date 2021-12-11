@@ -14,7 +14,7 @@ const useQuestions = (difficulty = "medium") => {
 		};
 
 		const shapeQuestions = (questions) => {
-			const shapedQuestions = questions.map((question) => {
+			const shapedQuestions = questions.map((question, index) => {
 				const answers = [
 					question.correct_answer,
 					...question.incorrect_answers,
@@ -24,6 +24,7 @@ const useQuestions = (difficulty = "medium") => {
 				const correctAnswerIndex = answers.indexOf(question.correct_answer);
 
 				return {
+					id: `q-${index}`,
 					question: question.question,
 					answers,
 					correctAnswer: correctAnswerIndex,

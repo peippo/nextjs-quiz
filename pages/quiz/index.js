@@ -3,6 +3,7 @@ import Image from "next/image";
 import Link from "next/link";
 import styles from "../../styles/Home.module.css";
 import useQuestions from "./hooks/useQuestions";
+import Question from "./components/Question.js";
 
 export default function Quiz() {
 	const [isLoading, isError, questions] = useQuestions();
@@ -17,6 +18,14 @@ export default function Quiz() {
 
 			<main className={styles.main}>
 				<h1 className={styles.title}>Answer the questions</h1>
+
+				{!isLoading && (
+					<ul>
+						{questions?.map((question) => (
+							<Question key={question.id} data={question} />
+						))}
+					</ul>
+				)}
 			</main>
 
 			<footer className={styles.footer}>
