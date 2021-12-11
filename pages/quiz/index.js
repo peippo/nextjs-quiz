@@ -1,9 +1,8 @@
 import Head from "next/head";
 import Image from "next/image";
-import Link from "next/link";
 import styles from "../../styles/Home.module.css";
-import useQuestions from "./hooks/useQuestions";
-import Question from "./components/Question.js";
+import useQuestions from "../../hooks/useQuestions";
+import Question from "../../components/quiz/Question.js";
 
 export default function Quiz() {
 	const [isLoading, isError, questions] = useQuestions();
