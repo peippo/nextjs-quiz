@@ -1,9 +1,12 @@
 import Head from "next/head";
 import Image from "next/image";
 import Link from "next/link";
-import styles from "../styles/Home.module.css";
+import styles from "../../styles/Home.module.css";
+import useQuestions from "./hooks/useQuestions";
 
-export default function Home() {
+export default function Quiz() {
+	const [isLoading, isError, questions] = useQuestions();
+
 	return (
 		<div className={styles.container}>
 			<Head>
@@ -13,11 +16,7 @@ export default function Home() {
 			</Head>
 
 			<main className={styles.main}>
-				<h1 className={styles.title}>Video Games Quiz!</h1>
-
-				<Link href="/quiz">
-					<button className={styles.button}>Start the quiz!</button>
-				</Link>
+				<h1 className={styles.title}>Answer the questions</h1>
 			</main>
 
 			<footer className={styles.footer}>
