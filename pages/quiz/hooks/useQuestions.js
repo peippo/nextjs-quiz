@@ -1,4 +1,5 @@
 import { useState, useEffect } from "react";
+const base64 = require("base-64");
 
 const useQuestions = (difficulty = "medium") => {
 	const [isLoading, setIsLoading] = useState(false);
@@ -25,8 +26,8 @@ const useQuestions = (difficulty = "medium") => {
 
 				return {
 					id: `q-${index}`,
-					question: question.question,
-					answers,
+					question: base64.decode(question.question),
+					answers: answers.map((answer) => base64.decode(answer)),
 					correctAnswer: correctAnswerIndex,
 				};
 			});
@@ -39,7 +40,7 @@ const useQuestions = (difficulty = "medium") => {
 
 			try {
 				const response = await fetch(
-					`https://opentdb.com/api.php?amount=5&category=15&difficulty=${difficulty}&type=multiple`
+					`https://opentdb.com/api.php?amount=5&category=15&difficulty=${difficulty}&type=multiple&encode=base64`
 				);
 				const questions = await response.json();
 				const shapedQuestions = shapeQuestions(questions.results);
