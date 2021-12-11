@@ -1,9 +1,14 @@
 import Head from "next/head";
 import Image from "next/image";
-import styles from "../styles/Home.module.css";
-import StartPrompt from "../components/startPrompt";
+import styles from "../../styles/Home.module.css";
+import { useRecoilValue } from "recoil";
+import { answersAtom } from "../../state/answers";
+import { calculatePoints } from "../../utils";
+import StartPrompt from "../../components/startPrompt";
 
-export default function Home() {
+export default function Results() {
+	const answersState = useRecoilValue(answersAtom);
+
 	return (
 		<div className={styles.container}>
 			<Head>
@@ -13,9 +18,11 @@ export default function Home() {
 			</Head>
 
 			<main className={styles.main}>
-				<h1 className={styles.title}>Video Games Quiz!</h1>
+				<h1 className={styles.title}>Results</h1>
 
-				<p>Select difficulty to begin:</p>
+				<p>You got {calculatePoints(answersState)} points</p>
+
+				<p>Play another round?</p>
 				<StartPrompt />
 			</main>
 

@@ -1,13 +1,12 @@
 import Head from "next/head";
+import Link from "next/link";
 import Image from "next/image";
 import { useRecoilValue } from "recoil";
 import styles from "../../styles/Home.module.css";
 import { areAllQuestionsAnswered } from "../../state/answers";
-import useQuestions from "../../hooks/useQuestions";
-import Question from "../../components/quiz/Question.js";
+import Questions from "../../components/quiz/Questions.js";
 
 export default function Quiz() {
-	const [isLoading, isError, questions] = useQuestions();
 	const isAnswered = useRecoilValue(areAllQuestionsAnswered);
 
 	return (
@@ -21,15 +20,13 @@ export default function Quiz() {
 			<main className={styles.main}>
 				<h1 className={styles.title}>Answer the questions</h1>
 
-				{!isLoading && (
-					<ul>
-						{questions?.map((question) => (
-							<Question key={question.id} data={question} />
-						))}
-					</ul>
-				)}
+				<Questions />
 
-				{isAnswered && <p>Done!</p>}
+				{isAnswered && (
+					<Link href="/results">
+						<a>Done!</a>
+					</Link>
+				)}
 			</main>
 
 			<footer className={styles.footer}>

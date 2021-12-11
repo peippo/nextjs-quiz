@@ -1,29 +1,9 @@
 import { atom, selector } from "recoil";
+import { initialAnswersState } from "../utils";
 
 export const answersAtom = atom({
 	key: "answers",
-	default: [
-		{
-			selected: null,
-			isCorrect: false,
-		},
-		{
-			selected: null,
-			isCorrect: false,
-		},
-		{
-			selected: null,
-			isCorrect: false,
-		},
-		{
-			selected: null,
-			isCorrect: false,
-		},
-		{
-			selected: null,
-			isCorrect: false,
-		},
-	],
+	default: initialAnswersState,
 });
 
 export const areAllQuestionsAnswered = selector({
