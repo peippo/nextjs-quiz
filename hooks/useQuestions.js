@@ -25,7 +25,7 @@ const useQuestions = (difficulty = "medium") => {
 				const correctAnswerIndex = answers.indexOf(question.correct_answer);
 
 				return {
-					id: `q-${index}`,
+					id: index,
 					question: base64.decode(question.question),
 					answers: answers.map((answer) => base64.decode(answer)),
 					correctAnswer: correctAnswerIndex,
@@ -45,7 +45,6 @@ const useQuestions = (difficulty = "medium") => {
 				const questions = await response.json();
 				const shapedQuestions = shapeQuestions(questions.results);
 				setQuestions(shapedQuestions);
-				console.log(shapedQuestions);
 			} catch (error) {
 				setIsError(true);
 				console.log(error);

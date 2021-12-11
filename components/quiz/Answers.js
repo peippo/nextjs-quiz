@@ -1,14 +1,24 @@
 import React from "react";
+import { useRecoilState, useRecoilValue } from "recoil";
+import { answersAtom, areAllQuestionsAnswered } from "../../state/answers";
+import { replaceItemAtIndex } from "../../utils";
 
 const Answers = ({ answers, correctAnswer, questionId }) => {
-	const handleChange = (event) => {
-		console.log(event.target.id);
+	const [answersState, setAnswersState] = useRecoilState(answersAtom);
+	const allDone = useRecoilValue(areAllQuestionsAnswered);
+
+	const handleChange = (index) => {
+		setAnswersState(
+			replaceItemAtIndex(answersState, questionId, {
+				selected: index,
+				isCorrect: index === correctAnswer,
+			})
+		);
 	};
 
 	return (
 		<ul>
 			{answers.map((answer, index) => {
-				const isCorrect = index === correctAnswer;
 				const id = `${questionId}-${index}`;
 
 				return (
@@ -17,8 +27,8 @@ const Answers = ({ answers, correctAnswer, questionId }) => {
 							type="radio"
 							id={id}
 							value={answer}
-							checked={isCorrect}
-							onChange={(event) => handleChange(event)}
+							checked={answersState[questionId].selected === index}
+							onChange={() => handleChange(index)}
 						/>
 						<label htmlFor={`${questionId}-${index}`}>{answer}</label>
 					</li>

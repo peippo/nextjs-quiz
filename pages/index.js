@@ -16,7 +16,7 @@ export default function Home() {
 				<h1 className={styles.title}>Video Games Quiz!</h1>
 
 				<Link href="/quiz">
-					<button className={styles.button}>Start the quiz!</button>
+					<a className={styles.button}>Start the quiz!</a>
 				</Link>
 			</main>
 
