@@ -1,7 +1,10 @@
 import { useState, useEffect } from "react";
 const base64 = require("base-64");
+import { useRecoilValue } from "recoil";
+import { difficultyAtom } from "../state/difficulty";
 
-const useQuestions = (difficulty = "medium") => {
+const useQuestions = () => {
+	const difficulty = useRecoilValue(difficultyAtom);
 	const [isLoading, setIsLoading] = useState(false);
 	const [isError, setIsError] = useState(false);
 	const [questions, setQuestions] = useState();

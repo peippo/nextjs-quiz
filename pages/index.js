@@ -1,7 +1,7 @@
 import Head from "next/head";
 import Image from "next/image";
-import Link from "next/link";
 import styles from "../styles/Home.module.css";
+import StartPrompt from "../components/startPrompt";
 
 export default function Home() {
 	return (
@@ -15,9 +15,7 @@ export default function Home() {
 			<main className={styles.main}>
 				<h1 className={styles.title}>Video Games Quiz!</h1>
 
-				<Link href="/quiz">
-					<a className={styles.button}>Start the quiz!</a>
-				</Link>
+				<StartPrompt />
 			</main>
 
 			<footer className={styles.footer}>
