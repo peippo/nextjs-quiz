@@ -57,7 +57,7 @@ const useQuestions = () => {
 		};
 
 		fetchQuestions();
-	}, []);
+	}, [difficulty]);
 
 	return [isLoading, isError, questions];
 };
