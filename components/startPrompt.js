@@ -1,18 +1,17 @@
 import React from "react";
 import { useRouter } from "next/router";
-import { useRecoilState } from "recoil";
+import { useSetRecoilState, useResetRecoilState } from "recoil";
 import { answersAtom } from "../state/answers";
 import { difficultyAtom } from "../state/difficulty";
-import { initialAnswersState } from "../utils";
 
 const StartPrompt = () => {
 	const router = useRouter();
-	const [, setDifficulty] = useRecoilState(difficultyAtom);
-	const [, setAnswersState] = useRecoilState(answersAtom);
+	const setDifficulty = useSetRecoilState(difficultyAtom);
+	const resetAnswers = useResetRecoilState(answersAtom);
 
 	const handleClick = (difficulty) => {
 		setDifficulty(difficulty);
-		setAnswersState(initialAnswersState);
+		resetAnswers();
 		router.push("/quiz");
 	};
 
