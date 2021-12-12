@@ -1,19 +1,33 @@
-import { useUser } from "@auth0/nextjs-auth0";
+import { useEffect } from "react";
 import styles from "./StatusBar.module.css";
+import useUserStats from "../../hooks/useUserStats";
+import { useUser } from "@auth0/nextjs-auth0";
+import { userAtom } from "../../state/user";
+import { useRecoilState } from "recoil";
 import Stats from "./Stats";
 
 export default function StatusBar() {
-	const { user, error, isLoading } = useUser();
+	const { user } = useUser();
+	useUserStats();
+	const [userState, setUserState] = useRecoilState(userAtom);
 
-	if (isLoading) return <div>Loading...</div>;
-	if (error) return <div>{error.message}</div>;
+	useEffect(() => {
+		if (user) {
+			const userState = {
+				userId: user.sub,
+				nickname: user.nickname,
+			};
+
+			setUserState(userState);
+		}
+	}, [user, setUserState]);
 
 	return (
 		<div className={styles.container}>
-			{user && (
+			{userState.userId && (
 				<>
-					<p className={styles.username}>{user.nickname}</p>
-					<Stats userId={user.sub} />
+					<p className={styles.username}>{userState.nickname}</p>
+					<Stats />
 					<a href="/api/auth/logout">Logout</a>
 				</>
 			)}

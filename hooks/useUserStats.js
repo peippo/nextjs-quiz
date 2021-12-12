@@ -1,35 +1,32 @@
 import { useState, useEffect, useContext } from "react";
 import { SupabaseContext } from "../supabase/client";
+import { useRecoilValue, useRecoilState } from "recoil";
+import { userAtom } from "../state/user";
+import { statsAtom } from "../state/stats";
 
-const useUserStats = (userId) => {
+const useUserStats = () => {
 	const { supabase } = useContext(SupabaseContext);
-
-	const [userStats, setUserStats] = useState();
-	const [isLoading, setIsLoading] = useState(true);
-	const [isError, setIsError] = useState(false);
+	const user = useRecoilValue(userAtom);
+	const [, setStats] = useRecoilState(statsAtom);
 
 	useEffect(() => {
 		const fetchUserStats = async () => {
-			setIsLoading(true);
 			const { data, error } = await supabase
 				.from("users")
 				.select("rounds, coins")
-				.eq("user_id", userId);
+				.eq("user_id", user.userId);
 
 			if (!error) {
-				setUserStats(data[0]);
+				setStats(data[0]);
 			} else {
 				console.log(error.message);
-				setIsError(true);
 			}
-
-			setIsLoading(false);
 		};
 
-		fetchUserStats();
-	}, [supabase, userId]);
-
-	return [isLoading, isError, userStats];
+		if (user.userId) {
+			fetchUserStats();
+		}
+	}, [supabase, user, setStats]);
 };
 
 export default useUserStats;

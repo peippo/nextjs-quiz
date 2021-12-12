@@ -1,18 +1,19 @@
-import useUserStats from "../../hooks/useUserStats";
 import styles from "./Stats.module.css";
+import { useRecoilValue } from "recoil";
+import { statsAtom } from "../../state/stats";
 
-const Stats = ({ userId }) => {
-	const [isLoading, isError, userStats] = useUserStats(userId);
+const Stats = () => {
+	const stats = useRecoilValue(statsAtom);
 
 	return (
 		<>
-			{userStats && (
+			{stats && (
 				<div className={styles.container}>
 					<p className={styles.rounds}>
-						Rounds played: <strong>{userStats.rounds}</strong>
+						Rounds played: <strong>{stats.rounds}</strong>
 					</p>
 					<p className={styles.coins}>
-						Coins: <strong>{userStats.coins}</strong>
+						Coins: <strong>{stats.coins}</strong>
 					</p>
 				</div>
 			)}
