@@ -17,6 +17,8 @@ export default function Home() {
 
 				<p>Select difficulty to begin:</p>
 				<StartPrompt />
+
+				<a href="/api/auth/login">Login</a>
 			</main>
 
 			<footer className={styles.footer}>

@@ -1,11 +1,14 @@
 import "../styles/globals.css";
 import { RecoilRoot } from "recoil";
+import { UserProvider } from "@auth0/nextjs-auth0";
 
 function MyApp({ Component, pageProps }) {
 	return (
-		<RecoilRoot>
-			<Component {...pageProps} />
-		</RecoilRoot>
+			<UserProvider>
+				<RecoilRoot>
+					<Component {...pageProps} />
+				</RecoilRoot>
+			</UserProvider>
 	);
 }
 
