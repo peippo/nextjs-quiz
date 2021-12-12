@@ -1,0 +1,12 @@
+.container {
+	display: flex;
+	align-items: center;
+}
+
+.rounds {
+	margin: 0 1rem;
+}
+
+.coins {
+	margin: 0 1rem;
+}

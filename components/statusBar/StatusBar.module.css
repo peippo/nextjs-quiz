@@ -1,0 +1,13 @@
+.container {
+	display: flex;
+	justify-content: flex-end;
+	align-items: center;
+	background-color: var(--status-bar-background-color);
+	padding: 1rem;
+}
+
+.username {
+	display: inline-block;
+	font-weight: bold;
+	margin: 0 1rem;
+}
