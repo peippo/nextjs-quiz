@@ -1,11 +1,12 @@
 import Head from "next/head";
 import Image from "next/image";
 import styles from "../styles/Home.module.css";
-import StartPrompt from "../components/startPrompt";
+import Layout from "../components/Layout";
+import StartPrompt from "../components/StartPrompt";
 
 export default function Home() {
 	return (
-		<div className={styles.container}>
+		<Layout>
 			<Head>
 				<title>Video Games Quiz</title>
 				<meta name="description" content="Video Games Quiz" />
@@ -38,6 +39,6 @@ export default function Home() {
 					</span>
 				</a>
 			</footer>
-		</div>
+		</Layout>
 	);
 }

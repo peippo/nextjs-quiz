@@ -4,13 +4,14 @@ import Image from "next/image";
 import { useRecoilValue } from "recoil";
 import styles from "../../styles/Home.module.css";
 import { areAllQuestionsAnswered } from "../../state/answers";
+import Layout from "../../components/Layout";
 import Questions from "../../components/quiz/Questions.js";
 
 export default function Quiz() {
 	const isAnswered = useRecoilValue(areAllQuestionsAnswered);
 
 	return (
-		<div className={styles.container}>
+		<Layout>
 			<Head>
 				<title>Video Games Quiz</title>
 				<meta name="description" content="Video Games Quiz" />
@@ -46,6 +47,6 @@ export default function Quiz() {
 					</span>
 				</a>
 			</footer>
-		</div>
+		</Layout>
 	);
 }

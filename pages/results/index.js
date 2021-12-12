@@ -4,13 +4,14 @@ import styles from "../../styles/Home.module.css";
 import { useRecoilValue } from "recoil";
 import { answersAtom } from "../../state/answers";
 import { calculatePoints } from "../../utils";
-import StartPrompt from "../../components/startPrompt";
+import Layout from "../../components/Layout";
+import StartPrompt from "../../components/StartPrompt";
 
 export default function Results() {
 	const answersState = useRecoilValue(answersAtom);
 
 	return (
-		<div className={styles.container}>
+		<Layout>
 			<Head>
 				<title>Video Games Quiz</title>
 				<meta name="description" content="Video Games Quiz" />
@@ -43,6 +44,6 @@ export default function Results() {
 					</span>
 				</a>
 			</footer>
-		</div>
+		</Layout>
 	);
 }
