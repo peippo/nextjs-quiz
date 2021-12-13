@@ -1,3 +1,4 @@
+import Link from "next/link";
 import Head from "next/head";
 import styles from "../styles/Home.module.css";
 import Layout from "../components/Layout";
@@ -18,7 +19,9 @@ export default function Home() {
 				<p>Select difficulty to begin:</p>
 				<StartPrompt />
 
-				<a href="/api/auth/login">Login</a>
+				<Link locale={false} href="/api/auth/login">
+					<a>Login</a>
+				</Link>
 			</main>
 		</Layout>
 	);
