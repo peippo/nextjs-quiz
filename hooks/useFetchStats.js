@@ -4,10 +4,10 @@ import { useRecoilValue, useRecoilState } from "recoil";
 import { userAtom } from "../state/user";
 import { statsAtom } from "../state/stats";
 
-const useUserStats = () => {
+const useFetchStats = () => {
 	const { supabase } = useContext(SupabaseContext);
 	const user = useRecoilValue(userAtom);
-	const [, setStats] = useRecoilState(statsAtom);
+	const [stats, setStats] = useRecoilState(statsAtom);
 
 	useEffect(() => {
 		const fetchUserStats = async () => {
@@ -23,10 +23,10 @@ const useUserStats = () => {
 			}
 		};
 
-		if (user.userId) {
+		if (user.userId && !stats) {
 			fetchUserStats();
 		}
-	}, [supabase, user, setStats]);
+	}, [supabase, user, stats, setStats]);
 };
 
-export default useUserStats;
+export default useFetchStats;

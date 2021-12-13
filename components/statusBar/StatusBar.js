@@ -1,6 +1,6 @@
 import { useEffect } from "react";
 import styles from "./StatusBar.module.css";
-import useUserStats from "../../hooks/useUserStats";
+import useFetchStats from "../../hooks/useFetchStats";
 import { useUser } from "@auth0/nextjs-auth0";
 import { userAtom } from "../../state/user";
 import { useRecoilState } from "recoil";
@@ -8,7 +8,7 @@ import Stats from "./Stats";
 
 export default function StatusBar() {
 	const { user } = useUser();
-	useUserStats();
+	useFetchStats();
 	const [userState, setUserState] = useRecoilState(userAtom);
 
 	useEffect(() => {
