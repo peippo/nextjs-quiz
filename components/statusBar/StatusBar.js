@@ -1,4 +1,3 @@
-import Link from "next/link";
 import { useEffect } from "react";
 import styles from "./StatusBar.module.css";
 import useFetchStats from "../../hooks/useFetchStats";
@@ -29,9 +28,7 @@ export default function StatusBar() {
 				<>
 					<p className={styles.username}>{userState.nickname}</p>
 					<Stats />
-					<Link locale={false} href="/api/auth/logout">
-						<a>Logout</a>
-					</Link>
+					<a href="/api/auth/logout">Logout</a>
 				</>
 			)}
 		</div>
