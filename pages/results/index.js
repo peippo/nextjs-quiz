@@ -26,6 +26,7 @@ export default function Results() {
 			updateServerStats(user.userId, rounds, coins);
 			setStats({ rounds: rounds, coins: coins });
 		}
+		// eslint-disable-next-line react-hooks/exhaustive-deps
 	}, []);
 
 	return (
