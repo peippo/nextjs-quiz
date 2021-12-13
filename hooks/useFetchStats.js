@@ -1,11 +1,10 @@
-import { useState, useEffect, useContext } from "react";
-import { SupabaseContext } from "../supabase/client";
+import { useEffect } from "react";
+import { supabase } from "../supabase/client";
 import { useRecoilValue, useRecoilState } from "recoil";
 import { userAtom } from "../state/user";
 import { statsAtom } from "../state/stats";
 
 const useFetchStats = () => {
-	const { supabase } = useContext(SupabaseContext);
 	const user = useRecoilValue(userAtom);
 	const [stats, setStats] = useRecoilState(statsAtom);
 
@@ -26,7 +25,7 @@ const useFetchStats = () => {
 		if (user.userId && !stats) {
 			fetchUserStats();
 		}
-	}, [supabase, user, stats, setStats]);
+	}, [user, stats, setStats]);
 };
 
 export default useFetchStats;

@@ -1,18 +1,16 @@
-import { useEffect, useContext } from "react";
+import { useEffect } from "react";
 import Head from "next/head";
 import styles from "../../styles/Home.module.css";
+import { updateServerStats } from "../../supabase/client";
 import Layout from "../../components/Layout";
 import StartPrompt from "../../components/StartPrompt";
 import { useRecoilValue, useSetRecoilState } from "recoil";
 import { userAtom } from "../../state/user";
 import { answersAtom } from "../../state/answers";
 import useCalculateStats from "../../hooks/useCalculateStats";
-import { SupabaseContext } from "../../supabase/client";
 import { statsAtom } from "../../state/stats";
 
 export default function Results() {
-	const { updateServerStats } = useContext(SupabaseContext);
-
 	const user = useRecoilValue(userAtom);
 	const answers = useRecoilValue(answersAtom);
 	const setStats = useSetRecoilState(statsAtom);
