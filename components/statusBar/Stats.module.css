@@ -1,6 +1,17 @@
 .container {
 	display: flex;
 	align-items: center;
+	margin: 0 1rem;
+}
+
+.marginLeft {
+	margin-left: 0.5rem;
+}
+
+.rounds,
+.coins {
+	display: flex;
+	align-items: center;
 }
 
 .rounds {

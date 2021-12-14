@@ -1,0 +1,28 @@
+.buttonEasy {
+	background-color: var(--color-additional);
+	color: #000000;
+}
+
+.buttonEasy:hover,
+.buttonEasy:focus {
+	outline-color: var(--color-additional);
+}
+
+.buttonMedium {
+	background-color: var(--color-secondary);
+	color: #000000;
+}
+
+.buttonMedium:hover,
+.buttonMedium:focus {
+	outline-color: var(--color-secondary);
+}
+
+.buttonHard {
+	background-color: var(--color-primary);
+}
+
+.buttonHard:hover,
+.buttonHard:focus {
+	outline-color: var(--color-primary);
+}

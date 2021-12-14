@@ -1,4 +1,5 @@
 import React from "react";
+import styles from "./StartPrompt.module.css";
 import { useRouter } from "next/router";
 import { useSetRecoilState, useResetRecoilState } from "recoil";
 import { answersAtom } from "../state/answers";
@@ -17,9 +18,24 @@ const StartPrompt = () => {
 
 	return (
 		<div>
-			<button onClick={() => handleClick("easy")}>Easy</button>
-			<button onClick={() => handleClick("medium")}>Medium</button>
-			<button onClick={() => handleClick("hard")}>Hard</button>
+			<button
+				className={styles.buttonEasy}
+				onClick={() => handleClick("easy")}
+			>
+				Easy
+			</button>
+			<button
+				className={styles.buttonMedium}
+				onClick={() => handleClick("medium")}
+			>
+				Medium
+			</button>
+			<button
+				className={styles.buttonHard}
+				onClick={() => handleClick("hard")}
+			>
+				Hard
+			</button>
 		</div>
 	);
 };

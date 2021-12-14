@@ -2,12 +2,30 @@
 	display: flex;
 	justify-content: flex-end;
 	align-items: center;
-	background-color: var(--status-bar-background-color);
+	background: linear-gradient(
+		to bottom,
+		var(--status-bar-background-color) 20%,
+		#ec2615
+	);
 	padding: 1rem;
+	min-height: 50px;
+	border-bottom: 1px solid #ffffff99;
+	box-shadow: 0 20px 50px -20px #afd1df;
 }
 
 .username {
 	display: inline-block;
 	font-weight: bold;
 	margin: 0 1rem;
+}
+
+.iconButtonWrapper {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+}
+
+.logLink {
+	color: #ffffff;
+	margin-left: 0.5rem;
 }

@@ -1,4 +1,4 @@
-import React from "react";
+import styles from "./Quiz.module.css";
 import useQuestions from "../../hooks/useQuestions";
 import Question from "../../components/quiz/Question.js";
 
@@ -8,7 +8,7 @@ const Questions = () => {
 	return (
 		<>
 			{!isLoading && (
-				<ul>
+				<ul className={styles.answersList}>
 					{questions?.map((question) => (
 						<Question key={question.id} data={question} />
 					))}

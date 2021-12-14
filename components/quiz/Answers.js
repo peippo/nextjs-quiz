@@ -1,4 +1,4 @@
-import React from "react";
+import styles from "./Quiz.module.css";
 import { useRecoilState, useRecoilValue } from "recoil";
 import { answersAtom, areAllQuestionsAnswered } from "../../state/answers";
 import { replaceItemAtIndex } from "../../utils";
@@ -22,15 +22,21 @@ const Answers = ({ answers, correctAnswer, questionId }) => {
 				const id = `${questionId}-${index}`;
 
 				return (
-					<li key={id}>
+					<li key={id} className={styles.answerItem}>
 						<input
+							className={styles.answerInput}
 							type="radio"
 							id={id}
 							value={answer}
 							checked={answersState[questionId].selected === index}
 							onChange={() => handleChange(index)}
 						/>
-						<label htmlFor={`${questionId}-${index}`}>{answer}</label>
+						<label
+							className={styles.answerLabel}
+							htmlFor={`${questionId}-${index}`}
+						>
+							{answer}
+						</label>
 					</li>
 				);
 			})}

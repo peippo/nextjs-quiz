@@ -19,13 +19,11 @@ export default function Quiz() {
 			</Head>
 
 			<main className={styles.main}>
-				<h1 className={styles.title}>Answer the questions</h1>
-
 				<Questions />
 
 				{isAnswered && (
-					<Link href="/results">
-						<a>Done!</a>
+					<Link href="/results" passHref>
+						<button>Submit answers</button>
 					</Link>
 				)}
 			</main>

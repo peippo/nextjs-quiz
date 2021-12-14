@@ -1,13 +1,18 @@
 :root {
-	--status-bar-background-color: #f0f0f0;
+	--color-primary: #b7000b;
+	--color-secondary: #f7d100;
+	--color-additional: #2bca63;
+	--color-background: #002939;
+	--status-bar-background-color: var(--color-primary);
 }
 
 html,
 body {
 	padding: 0;
 	margin: 0;
-	font-family: -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Oxygen,
-		Ubuntu, Cantarell, Fira Sans, Droid Sans, Helvetica Neue, sans-serif;
+	font-family: "Comfortaa", sans-serif;
+	background-color: var(--color-background);
+	color: #ffffff;
 }
 
 a {
@@ -23,4 +28,24 @@ ul {
 	list-style-type: none;
 	margin: 0;
 	padding: 0;
+}
+
+button {
+	background: none;
+	border: 0;
+	color: #ffffff;
+	background-color: var(--color-primary);
+	font-size: 20px;
+	padding: 0.75rem 2rem;
+	border-radius: 1000px;
+	margin: 0.5rem;
+	outline: 3px solid transparent;
+	outline-offset: 3px;
+	transition: outline 0.25s;
+}
+
+button:hover,
+button:focus {
+	cursor: pointer;
+	outline: 3px solid;
 }
