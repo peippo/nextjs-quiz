@@ -1,3 +1,5 @@
+$breakpoint-medium: 900px;
+
 .answersList {
 	margin-top: 1rem;
 	padding: 0 15px;
@@ -46,19 +48,32 @@
 
 .questionLegend {
 	font-weight: 700;
-	font-size: 1.25rem;
+	font-size: 1rem;
 	background-color: var(--color-background);
 	color: #ffffff;
-	padding: 1rem 1.5rem 1rem 0;
-	border-radius: 0 0 15px 0;
-	margin-left: -1.25rem;
-	max-width: 90%;
+	padding: 1rem 1.5rem;
+	border-top: 3px solid var(--color-secondary);
+	margin: 0 -1.25rem;
 	top: -2px;
+	width: calc(100% + 2.5rem);
 	position: relative;
+
+	@media (min-width: $breakpoint-medium) {
+		font-size: 1.25rem;
+		max-width: 90%;
+		margin-left: -1.25rem;
+		padding: 1rem 1.5rem 1rem 0;
+		border-top: 0;
+		border-radius: 0 0 15px 0;
+	}
 }
 
 .answerItem {
-	font-size: 1.15rem;
+	font-size: 1rem;
+
+	@media (min-width: $breakpoint-medium) {
+		font-size: 1.15rem;
+	}
 }
 
 .answerItem:not(:last-child) {
