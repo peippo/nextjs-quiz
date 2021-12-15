@@ -1,0 +1,28 @@
+.container {
+	display: flex;
+}
+
+.negative,
+.positive {
+	width: 64px;
+	height: 64px;
+	margin: 10px;
+}
+
+.negative {
+	position: relative;
+
+	&:after {
+		content: "";
+		position: absolute;
+		left: 25px;
+		top: -10px;
+		width: 8px;
+		height: 80px;
+		background-color: var(--color-primary);
+		z-index: 1;
+		transform: rotate(45deg);
+		border-radius: 10px;
+		box-shadow: 2px 0 0 2px var(--color-background);
+	}
+}

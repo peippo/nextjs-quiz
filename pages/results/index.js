@@ -9,6 +9,7 @@ import { answersAtom } from "../../state/answers";
 import useCalculateStats from "../../hooks/useCalculateStats";
 import { SupabaseContext } from "../../supabase/client";
 import { statsAtom } from "../../state/stats";
+import Coins from "../../components/Coins.js";
 
 export default function Results() {
 	const { updateServerStats } = useContext(SupabaseContext);
@@ -38,6 +39,7 @@ export default function Results() {
 			<main>
 				<h1>Round Results</h1>
 
+				<Coins coins={newCoins} />
 				<p>{statsString}</p>
 
 				<h2 className="h3">Play another round?</h2>
