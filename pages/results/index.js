@@ -1,6 +1,6 @@
 import { useEffect, useContext } from "react";
+import Link from "next/link";
 import Head from "next/head";
-import styles from "../../styles/Home.module.css";
 import Layout from "../../components/Layout";
 import StartPrompt from "../../components/StartPrompt";
 import { useRecoilValue, useSetRecoilState } from "recoil";
@@ -44,6 +44,8 @@ export default function Results() {
 
 				<h2 className="h3">Play another round?</h2>
 				<StartPrompt />
+
+				<Link href="/">Back to home</Link>
 			</main>
 		</Layout>
 	);

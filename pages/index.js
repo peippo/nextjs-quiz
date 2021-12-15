@@ -1,4 +1,5 @@
-import styles from "../styles/Home.module.css";
+import styles from "../styles/Home.module.scss";
+import Link from "next/link";
 import Layout from "../components/Layout";
 import StartPrompt from "../components/StartPrompt";
 
@@ -18,8 +19,8 @@ export default function Home() {
 						<a className={styles.logLink} href="/api/auth/login">
 							Login
 						</a>{" "}
-						to keep track of your stats and reach the top of the high
-						score list!
+						to keep track of your stats and reach the top of the{" "}
+						<Link href="/scores">high score list!</Link>
 					</strong>
 				</p>
 				<h2>Select difficulty to begin</h2>
