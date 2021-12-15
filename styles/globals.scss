@@ -32,7 +32,21 @@ a {
 	box-sizing: border-box;
 }
 
-h1 {
+.screen-reader-text {
+	border: 0;
+	clip: rect(1px, 1px, 1px, 1px);
+	clip-path: inset(50%);
+	height: 1px;
+	margin: -1px;
+	overflow: hidden;
+	padding: 0;
+	position: absolute;
+	width: 1px;
+	word-wrap: normal !important;
+}
+
+h1,
+h2 {
 	position: relative;
 	font-size: 24px !important;
 	color: var(--color-secondary);
@@ -45,7 +59,7 @@ h1 {
 	}
 
 	@media (min-width: $breakpoint-medium) {
-		font-size: 44px !important;
+		font-size: 40px !important;
 
 		&:after {
 			content: "";
@@ -69,13 +83,43 @@ h1 {
 	}
 }
 
+.h3 {
+	font-size: 18px !important;
+	margin-top: 3rem;
+
+	&:after {
+		content: none;
+	}
+
+	@media (min-width: $breakpoint-small) {
+		font-size: 24px !important;
+	}
+
+	@media (min-width: $breakpoint-medium) {
+		font-size: 30px !important;
+	}
+}
+
 main {
-	padding: 5rem 0;
+	padding: 4rem 15px;
 	flex: 1;
 	display: flex;
 	flex-direction: column;
 	justify-content: center;
 	align-items: center;
+}
+
+strong {
+	font-weight: 700;
+}
+
+a {
+	border-bottom: 2px solid var(--color-secondary);
+	transition: border-bottom 0.25s;
+
+	&:hover {
+		border-bottom: 2px solid transparent;
+	}
 }
 
 ul {

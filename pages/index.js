@@ -6,6 +6,7 @@ export default function Home() {
 	return (
 		<Layout>
 			<main>
+				<h1 className="screen-reader-text">Video Game Quiz</h1>
 				<p className={styles.description}>
 					Five questions, get the majority right and you gain coins,
 					otherwise you lose them. Medium and hard difficulties have
@@ -21,7 +22,7 @@ export default function Home() {
 						score list!
 					</strong>
 				</p>
-				<h1>Select difficulty to begin</h1>
+				<h2>Select difficulty to begin</h2>
 				<StartPrompt />
 			</main>
 		</Layout>

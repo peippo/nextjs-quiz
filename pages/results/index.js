@@ -36,11 +36,11 @@ export default function Results() {
 			</Head>
 
 			<main>
-				<h1 className={styles.title}>Results</h1>
+				<h1>Round Results</h1>
 
 				<p>{statsString}</p>
 
-				<p>Play another round?</p>
+				<h2 className="h3">Play another round?</h2>
 				<StartPrompt />
 			</main>
 		</Layout>
