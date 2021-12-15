@@ -4,7 +4,6 @@ import HighScoresSkeleton from "./HighScoresSkeleton.js";
 
 const HighScores = () => {
 	const [isLoading, isError, usersByCoins] = useHighScores();
-	console.log("highscores page: ", usersByCoins);
 
 	return (
 		<>

@@ -11,7 +11,6 @@ const useHighScores = () => {
 	useEffect(() => {
 		const fetchUsersByCoins = async () => {
 			setIsLoading(true);
-			console.log("doing");
 			try {
 				const { data, error } = await supabase
 					.from("users")
