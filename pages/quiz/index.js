@@ -16,7 +16,7 @@ export default function Quiz() {
 
 				<Link href="/results" passHref>
 					<button
-						className={isAnswered && styles.buttonReady}
+						className={isAnswered ? styles.buttonReady : undefined}
 						disabled={!isAnswered}
 					>
 						{isAnswered ? "I'm ready!" : "Waiting for answers..."}
