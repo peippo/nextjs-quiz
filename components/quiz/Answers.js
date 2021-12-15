@@ -1,4 +1,4 @@
-import styles from "./Quiz.module.css";
+import styles from "./Quiz.module.scss";
 import { useRecoilState, useRecoilValue } from "recoil";
 import { answersAtom, areAllQuestionsAnswered } from "../../state/answers";
 import { replaceItemAtIndex } from "../../utils";

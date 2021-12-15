@@ -5,6 +5,7 @@
 
 .questionItem {
 	background-color: var(--color-secondary);
+	background: linear-gradient(140deg, var(--color-secondary) 70%, #c5a600);
 	color: var(--color-background);
 	border-radius: 20px;
 	margin-bottom: 2rem;
@@ -68,4 +69,63 @@
 .answerInput:checked + .answerLabel:before {
 	background-color: var(--color-additional);
 	box-shadow: inset 0 0 0 4px var(--color-background);
+}
+
+.answerInput:focus + .answerLabel:before {
+	background-color: var(--color-additional);
+	box-shadow: inset 0 0 0 4px var(--color-background);
+}
+
+// Loading skeleton
+
+.questionSkeleton {
+	position: relative;
+	background-color: #033548;
+	width: 100%;
+	max-width: 900px;
+	height: 190px;
+	border-radius: 20px;
+	margin-bottom: 2rem;
+	overflow: hidden;
+
+	&::after {
+		content: "";
+		position: absolute;
+		top: 0;
+		right: 0;
+		bottom: 0;
+		left: 0;
+		transform: translateX(-100%);
+		background: linear-gradient(
+			90deg,
+			rgba(#002939, 0) 0,
+			rgba(#002939, 1) 50%,
+			rgba(#002939, 0)
+		);
+		animation: loader 3s infinite;
+	}
+}
+
+.answerSkeleton,
+.answerSkeleton2 {
+	background-color: var(--color-background);
+	width: 70%;
+	height: 25px;
+	position: absolute;
+	top: 20px;
+	left: 20px;
+	border-radius: 5px;
+	box-shadow: 0 80px 0 0 var(--color-background);
+}
+
+.answerSkeleton2 {
+	width: 80%;
+	top: 60px;
+	box-shadow: 0 80px 0 0 var(--color-background);
+}
+
+@keyframes loader {
+	100% {
+		transform: translateX(100%);
+	}
 }

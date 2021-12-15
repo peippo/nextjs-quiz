@@ -1,4 +1,4 @@
-import styles from "./Quiz.module.css";
+import styles from "./Quiz.module.scss";
 import Answers from "./Answers.js";
 
 const Questions = ({ data }) => {
