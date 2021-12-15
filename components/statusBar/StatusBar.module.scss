@@ -16,7 +16,7 @@
 .username {
 	display: inline-block;
 	font-weight: bold;
-	margin: 0 1rem;
+	margin: 0;
 }
 
 .iconButtonWrapper {
@@ -28,4 +28,10 @@
 .logLink {
 	color: #ffffff;
 	margin-left: 0.5rem;
+	border-bottom: 2px solid transparent;
+
+	&:hover {
+		cursor: pointer;
+		border-bottom: 2px solid currentColor;
+	}
 }

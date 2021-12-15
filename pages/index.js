@@ -5,7 +5,7 @@ import StartPrompt from "../components/StartPrompt";
 export default function Home() {
 	return (
 		<Layout>
-			<main className={styles.main}>
+			<main>
 				<h1>Select difficulty to begin</h1>
 				<StartPrompt />
 			</main>

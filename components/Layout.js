@@ -12,7 +12,7 @@ const Layout = ({ children }) => {
 				<StatusBar />
 				<Logo />
 			</header>
-			<main>{children}</main>
+			{children}
 		</>
 	);
 };

@@ -1,8 +1,7 @@
 import Head from "next/head";
 import Link from "next/link";
-import Image from "next/image";
 import { useRecoilValue } from "recoil";
-import styles from "../../styles/Home.module.css";
+import styles from "../../styles/Results.module.scss";
 import { areAllQuestionsAnswered } from "../../state/answers";
 import Layout from "../../components/Layout";
 import Questions from "../../components/quiz/Questions.js";
@@ -18,14 +17,17 @@ export default function Quiz() {
 				<link rel="icon" href="/favicon.ico" />
 			</Head>
 
-			<main className={styles.main}>
+			<main>
 				<Questions />
 
-				{isAnswered && (
-					<Link href="/results" passHref>
-						<button>Submit answers</button>
-					</Link>
-				)}
+				<Link href="/results" passHref>
+					<button
+						className={isAnswered && styles.buttonReady}
+						disabled={!isAnswered}
+					>
+						{isAnswered ? "I'm ready!" : "Waiting for answers..."}
+					</button>
+				</Link>
 			</main>
 		</Layout>
 	);

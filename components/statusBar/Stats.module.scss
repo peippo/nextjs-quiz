@@ -1,3 +1,5 @@
+$breakpoint-medium: 800px;
+
 .container {
 	display: flex;
 	align-items: center;
@@ -20,4 +22,12 @@
 
 .coins {
 	margin: 0 1rem;
+}
+
+.descriptionText {
+	display: none;
+
+	@media (min-width: $breakpoint-medium) {
+		display: inline;
+	}
 }

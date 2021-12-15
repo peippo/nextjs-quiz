@@ -4,12 +4,39 @@
 }
 
 .questionItem {
+	position: relative;
 	background-color: var(--color-secondary);
 	background: linear-gradient(140deg, var(--color-secondary) 70%, #c5a600);
 	color: var(--color-background);
 	border-radius: 20px;
-	margin-bottom: 2rem;
+	margin-bottom: 2.5rem;
 	max-width: 900px;
+	z-index: 1;
+	transition: opacity 0.25s;
+	opacity: 0.9;
+
+	&:after {
+		content: "";
+		background-color: var(--color-additional);
+		background: linear-gradient(to bottom, var(--color-background), gray);
+		position: absolute;
+		bottom: -15px;
+		right: 5%;
+		width: 90%;
+		height: 15px;
+		z-index: -1;
+		border-radius: 0 0 100px 100px;
+		opacity: 0;
+		transition: opacity 0.25s;
+	}
+
+	&:hover {
+		opacity: 1;
+
+		&:after {
+			opacity: 0.5;
+		}
+	}
 }
 
 .questionFieldset {
@@ -19,17 +46,19 @@
 
 .questionLegend {
 	font-weight: 700;
-	font-size: 20px;
+	font-size: 1.25rem;
 	background-color: var(--color-background);
 	color: #ffffff;
 	padding: 1rem 1.5rem 1rem 0;
 	border-radius: 0 0 15px 0;
 	margin-left: -1.25rem;
 	max-width: 90%;
+	top: -2px;
+	position: relative;
 }
 
 .answerItem {
-	font-size: 20px;
+	font-size: 1.15rem;
 }
 
 .answerItem:not(:last-child) {
@@ -66,12 +95,12 @@
 	transition: all 250ms ease;
 }
 
-.answerInput:checked + .answerLabel:before {
-	background-color: var(--color-additional);
-	box-shadow: inset 0 0 0 4px var(--color-background);
+.answerInput:focus + .answerLabel:before {
+	background-color: gray;
+	box-shadow: inset 0 0 0 6px var(--color-background);
 }
 
-.answerInput:focus + .answerLabel:before {
+.answerInput:checked + .answerLabel:before {
 	background-color: var(--color-additional);
 	box-shadow: inset 0 0 0 4px var(--color-background);
 }
@@ -85,7 +114,7 @@
 	max-width: 900px;
 	height: 190px;
 	border-radius: 20px;
-	margin-bottom: 2rem;
+	margin-bottom: 2.5rem;
 	overflow: hidden;
 
 	&::after {

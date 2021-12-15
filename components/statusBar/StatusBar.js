@@ -1,6 +1,6 @@
 import Image from "next/image";
 import { useEffect } from "react";
-import styles from "./StatusBar.module.css";
+import styles from "./StatusBar.module.scss";
 import useFetchStats from "../../hooks/useFetchStats";
 import { useUser } from "@auth0/nextjs-auth0";
 import { userAtom } from "../../state/user";

@@ -6,14 +6,16 @@ const Questions = ({ data }) => {
 
 	return (
 		<li className={styles.questionItem}>
-			<fieldset className={styles.questionFieldset}>
-				<legend className={styles.questionLegend}>{question}</legend>
-				<Answers
-					answers={answers}
-					correctAnswer={correctAnswer}
-					questionId={questionId}
-				/>
-			</fieldset>
+			<form>
+				<fieldset className={styles.questionFieldset}>
+					<legend className={styles.questionLegend}>{question}</legend>
+					<Answers
+						answers={answers}
+						correctAnswer={correctAnswer}
+						questionId={questionId}
+					/>
+				</fieldset>
+			</form>
 		</li>
 	);
 };
