@@ -32,9 +32,7 @@ export default function Results() {
 	return (
 		<Layout>
 			<Head>
-				<title>Video Games Quiz</title>
-				<meta name="description" content="Video Games Quiz" />
-				<link rel="icon" href="/favicon.ico" />
+				<title>Quiz Results</title>
 			</Head>
 
 			<main>

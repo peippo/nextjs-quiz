@@ -11,12 +11,6 @@ export default function Quiz() {
 
 	return (
 		<Layout>
-			<Head>
-				<title>Video Games Quiz</title>
-				<meta name="description" content="Video Games Quiz" />
-				<link rel="icon" href="/favicon.ico" />
-			</Head>
-
 			<main>
 				<Questions />
 

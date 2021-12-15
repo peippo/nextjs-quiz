@@ -7,7 +7,7 @@ const Logo = () => {
 		<div className={styles.container}>
 			<Image
 				src={logo}
-				alt="Video Games Quiz"
+				alt="Video Game Quiz"
 				width="1200"
 				height="475"
 				priority={true}
