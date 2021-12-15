@@ -17,7 +17,7 @@ export default function Results() {
 	const answers = useRecoilValue(answersAtom);
 	const setStats = useSetRecoilState(statsAtom);
 
-	const [newStats, statsString] = useCalculateStats(answers);
+	const [newStats, statsString, newCoins] = useCalculateStats(answers);
 
 	useEffect(() => {
 		if (user.userId && newStats) {

@@ -10,10 +10,10 @@ const useCalculatePoints = (answersArr) => {
 
 	switch (difficulty) {
 		case "medium":
-			modifier = 1.25;
+			modifier = 2;
 			break;
 		case "hard":
-			modifier = 1.5;
+			modifier = 3;
 			break;
 		default:
 			break;
@@ -22,10 +22,34 @@ const useCalculatePoints = (answersArr) => {
 	const correctAnswers = answersArr.filter(
 		(answer) => answer.isCorrect
 	).length;
-	const wrongAnswers = 5 - correctAnswers;
-	const newCoins = Math.ceil(
-		0 - wrongAnswers * modifier + correctAnswers * modifier
-	);
+
+	const midScore = difficulty === "easy" ? 0 : difficulty === "medium" ? 1 : 2;
+
+	let baseScore = 0;
+	switch (correctAnswers) {
+		case 0:
+			baseScore = -2;
+			break;
+		case 1:
+			baseScore = -1;
+			break;
+		case 2:
+			baseScore = midScore;
+			break;
+		case 3:
+			baseScore = 1;
+			break;
+		case 4:
+			baseScore = 2;
+			break;
+		case 5:
+			baseScore = 3;
+			break;
+		default:
+			break;
+	}
+
+	const newCoins = baseScore * modifier;
 
 	const newStats = {
 		rounds: stats?.rounds + 1,
@@ -37,7 +61,7 @@ const useCalculatePoints = (answersArr) => {
 			? `You got ${correctAnswers}/5 answers right, that makes ${newCoins} coins!`
 			: `You got ${correctAnswers}/5 answers right, with a ${difficulty} modifier (${modifier}x) that makes ${newCoins} coins!`;
 
-	return [newStats, statsString];
+	return [newStats, statsString, newCoins];
 };
 
 export default useCalculatePoints;
