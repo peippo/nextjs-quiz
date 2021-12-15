@@ -23,7 +23,8 @@ const useCalculatePoints = (answersArr) => {
 		(answer) => answer.isCorrect
 	).length;
 
-	const midScore = difficulty === "easy" ? 0 : difficulty === "medium" ? 1 : 2;
+	const midScore =
+		difficulty === "easy" ? 1 : difficulty === "medium" ? 0.5 : 0.66;
 
 	let baseScore = 0;
 	switch (correctAnswers) {
@@ -49,7 +50,7 @@ const useCalculatePoints = (answersArr) => {
 			break;
 	}
 
-	const newCoins = baseScore * modifier;
+	const newCoins = Math.ceil(baseScore * modifier);
 
 	const newStats = {
 		rounds: stats?.rounds + 1,
