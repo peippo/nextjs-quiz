@@ -2,4 +2,8 @@
 	max-width: 500px;
 	text-align: center;
 	line-height: 1.35;
+
+	&:first-of-type {
+		margin-top: 0;
+	}
 }

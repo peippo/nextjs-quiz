@@ -17,7 +17,7 @@ const StartPrompt = () => {
 	};
 
 	return (
-		<div>
+		<div className={styles.container}>
 			<button
 				className={styles.buttonEasy}
 				onClick={() => handleClick("easy")}
