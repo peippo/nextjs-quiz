@@ -17,6 +17,16 @@ class MyDocument extends Document {
 					/>
 					<meta name="description" content="Video Game Quiz" />
 					<link rel="icon" href="/favicon.ico" />
+					<meta property="og:title" content="Video Game Quiz" />
+					<meta
+						property="og:description"
+						content="Video Game Quiz for Dev Jam @ Discord Challenge"
+					/>
+					<meta
+						property="og:image"
+						content="https://nextjs-quiz-nu.vercel.app/share.png"
+					/>
+					<meta name="twitter:card" content="summary_large_image" />
 				</Head>
 				<body>
 					<Main />
