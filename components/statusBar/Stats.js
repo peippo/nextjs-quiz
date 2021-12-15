@@ -15,9 +15,7 @@ const Stats = () => {
 					<p className={styles.rounds}>
 						<Image src={roundsIcon} width="20" height="20" alt="" />
 						<span className={styles.marginLeft}>
-							<span className={styles.descriptionText}>
-								Rounds played:{" "}
-							</span>
+							<span className={styles.descriptionText}>Rounds: </span>
 							<strong>{stats.rounds}</strong>
 						</span>
 					</p>
