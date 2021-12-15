@@ -1,9 +1,7 @@
-.buttonReady {
-	background-color: var(--color-additional);
-	color: #000000;
-}
+.buttons {
+	display: flex;
 
-.buttonReady:hover,
-.buttonReady:focus {
-	outline-color: var(--color-additional);
+	a {
+		margin: 0 1rem;
+	}
 }

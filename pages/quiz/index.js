@@ -1,7 +1,7 @@
 import Head from "next/head";
 import Link from "next/link";
 import { useRecoilValue } from "recoil";
-import styles from "../../styles/Results.module.scss";
+import styles from "../../styles/Quiz.module.scss";
 import { areAllQuestionsAnswered } from "../../state/answers";
 import Layout from "../../components/Layout";
 import Questions from "../../components/quiz/Questions.js";

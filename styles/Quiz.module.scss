@@ -1,0 +1,9 @@
+.buttonReady {
+	background-color: var(--color-additional);
+	color: #000000;
+}
+
+.buttonReady:hover,
+.buttonReady:focus {
+	outline-color: var(--color-additional);
+}

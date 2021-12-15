@@ -1,6 +1,7 @@
 import { useEffect, useContext } from "react";
 import Link from "next/link";
 import Head from "next/head";
+import styles from "../../styles/Results.module.scss";
 import Layout from "../../components/Layout";
 import StartPrompt from "../../components/StartPrompt";
 import { useRecoilValue, useSetRecoilState } from "recoil";
@@ -45,7 +46,10 @@ export default function Results() {
 				<h2 className="h3">Play another round?</h2>
 				<StartPrompt />
 
-				<Link href="/">Back to home</Link>
+				<div className={styles.buttons}>
+					<Link href="/scores">View high scores</Link>
+					<Link href="/">Back to home</Link>
+				</div>
 			</main>
 		</Layout>
 	);

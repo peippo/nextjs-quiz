@@ -20,7 +20,7 @@ export default function Home() {
 							Login
 						</a>{" "}
 						to keep track of your stats and reach the top of the{" "}
-						<Link href="/scores">high score list!</Link>
+						<Link href="/scores">high scores list!</Link>
 					</strong>
 				</p>
 				<h2>Select difficulty to begin</h2>
