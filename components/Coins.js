@@ -11,7 +11,7 @@ const Coins = ({ coins }) => {
 		let coinsArr = [];
 		for (let i = 0; i < coinsCount; i++) {
 			coinsArr.push(
-				<div className={wrapperClass}>
+				<div key={i} className={wrapperClass}>
 					<Image src={coinImage} alt="" />
 				</div>
 			);
