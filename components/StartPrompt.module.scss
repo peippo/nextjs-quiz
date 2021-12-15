@@ -6,6 +6,8 @@
 .buttonEasy:hover,
 .buttonEasy:focus {
 	outline-color: var(--color-additional);
+	box-shadow: 0 0 0 3px var(--color-background),
+		0 0 0 6px var(--color-additional);
 }
 
 .buttonMedium {
@@ -16,6 +18,8 @@
 .buttonMedium:hover,
 .buttonMedium:focus {
 	outline-color: var(--color-secondary);
+	box-shadow: 0 0 0 3px var(--color-background),
+		0 0 0 6px var(--color-secondary);
 }
 
 .buttonHard {
@@ -25,4 +29,5 @@
 .buttonHard:hover,
 .buttonHard:focus {
 	outline-color: var(--color-primary);
+	box-shadow: 0 0 0 3px var(--color-background), 0 0 0 6px var(--color-primary);
 }

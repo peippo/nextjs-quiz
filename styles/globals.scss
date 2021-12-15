@@ -93,24 +93,25 @@ button {
 	padding: 0.75rem 2rem;
 	border-radius: 1000px;
 	margin: 0.5rem;
-	outline: 3px solid transparent;
-	outline-offset: 3px;
-	transition: outline 0.25s;
+	outline: 0;
+	box-shadow: 0 0 0 3px var(--color-background), 0 0 0 6px transparent;
+	transition: box-shadow 0.25s;
 }
 
 button:disabled {
 	background-color: gray;
 	opacity: 0.5;
-	outline: none;
+	outline: 0;
 
 	&:hover {
 		cursor: default;
-		outline: none;
+		outline: 0;
 	}
 }
 
 button:hover,
 button:focus {
 	cursor: pointer;
-	outline: 3px solid;
+	box-shadow: 0 0 0 3px var(--color-background),
+		0 0 0 6px var(--color-additional);
 }

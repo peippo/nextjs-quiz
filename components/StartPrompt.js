@@ -1,5 +1,5 @@
 import React from "react";
-import styles from "./StartPrompt.module.css";
+import styles from "./StartPrompt.module.scss";
 import { useRouter } from "next/router";
 import { useSetRecoilState, useResetRecoilState } from "recoil";
 import { answersAtom } from "../state/answers";
