@@ -1,0 +1,83 @@
+.highScores {
+	border-collapse: collapse;
+	font-size: 1rem;
+	width: 100%;
+	max-width: 600px;
+	margin-bottom: 2rem;
+}
+
+.highScores thead {
+	tr {
+		background-color: var(--color-primary);
+		color: #ffffff;
+		text-align: left;
+	}
+
+	th {
+		&:first-of-type {
+			border-radius: 15px 0 0 0;
+		}
+
+		&:last-of-type {
+			border-radius: 0 15px 0 0;
+		}
+	}
+}
+
+.highScores th,
+.highScores td {
+	padding: 1rem;
+}
+
+.highScores tbody tr:nth-of-type(even) {
+	background-color: #001720;
+}
+
+// Loading skeleton
+
+.tableSkeleton {
+	position: relative;
+	background-color: #033548;
+	width: 100%;
+	max-width: 600px;
+	height: 270px;
+	border-radius: 15px 15px 0 0;
+	margin-bottom: 2.5rem;
+	overflow: hidden;
+
+	&::after {
+		content: "";
+		position: absolute;
+		top: 0;
+		right: 0;
+		bottom: 0;
+		left: 0;
+		transform: translateX(-100%);
+		background: linear-gradient(
+			90deg,
+			rgba(#002939, 0) 0,
+			rgba(#002939, 1) 50%,
+			rgba(#002939, 0)
+		);
+		animation: loader 3s infinite;
+	}
+}
+
+.rowSkeleton {
+	background-color: var(--color-background);
+	width: 90%;
+	height: 25px;
+	position: absolute;
+	top: 20px;
+	left: 20px;
+	border-radius: 5px;
+	box-shadow: 0 50px 0 0 var(--color-background),
+		0 100px 0 0 var(--color-background), 0 150px 0 0 var(--color-background),
+		0 200px 0 0 var(--color-background);
+}
+
+@keyframes loader {
+	100% {
+		transform: translateX(100%);
+	}
+}
