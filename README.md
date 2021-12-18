@@ -1,4 +1,4 @@
-<img src="https://nextjs-quiz-nu.vercel.app/share.png" alt="Banner image">
+<img src="https://nextjs-quiz-nu.vercel.app/screenshot.png" alt="App screenshot">
 
 # Video Game Quiz
 
@@ -13,7 +13,8 @@ A Next.js quiz app with authentication & high scores built as part of a weekly p
 -  [Recoil](https://recoiljs.org/)
 -  [Auth0](https://auth0.com/)
 
-Hosted on [Vercel](https://vercel.com/)
+-  Question from [Open Trivia Database](https://opentdb.com/)
+-  Hosted on [Vercel](https://vercel.com/)
 
 This project was bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
 
