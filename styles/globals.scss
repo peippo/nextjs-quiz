@@ -147,6 +147,13 @@ button {
 	}
 }
 
+button:hover,
+button:focus {
+	cursor: pointer;
+	box-shadow: 0 0 0 3px var(--color-background),
+		0 0 0 6px var(--color-additional);
+}
+
 button:disabled {
 	background-color: gray;
 	opacity: 0.5;
@@ -155,12 +162,6 @@ button:disabled {
 	&:hover {
 		cursor: default;
 		outline: 0;
+		box-shadow: none;
 	}
-}
-
-button:hover,
-button:focus {
-	cursor: pointer;
-	box-shadow: 0 0 0 3px var(--color-background),
-		0 0 0 6px var(--color-additional);
 }
